@@ -1,0 +1,47 @@
+ module digital_clock(CLOCK_50,KEY,LEDG,HEX0,HEX1,HEX2,HEX3,HEX4,HEX5,HEX6,HEX7);
+
+input CLOCK_50;
+input [3:0] KEY;
+output [8:0] LEDG ;
+output [6:0] HEX0 ;
+output [6:0] HEX1 ;
+output [6:0] HEX2 ;
+output [6:0] HEX3 ;
+output [6:0] HEX4 ;
+output [6:0] HEX5 ;
+output [6:0] HEX6 ;
+output [6:0] HEX7 ;
+
+wire [3:0] count_out;
+wire [3:0] count10_out;
+wire [3:0] countM_out;
+wire [3:0] countM10_out;
+wire [4:0] countH_out;
+wire [7:0] binary_to_bcd_out;
+
+wire [3:0]carry_out;
+wire [3:0]carry10_out;
+wire [3:0]carryM_out;
+wire [3:0]carryM10_out;
+
+
+clock_gen U1(.RST(KEY[0]), .CLK_50Mhz(CLOCK_50), .CLK_1Hz(LEDG[0]));
+counter #(10,$clog2(10)) C1(.clk(LEDG[0]), .rst(KEY[0]), .count_out(count_out), .carry_out(carry_out));
+counter #(6,$clog2(6)) C2(.clk(carry_out), .rst(KEY[0]), .count_out(count10_out), .carry_out(carry10_out));
+counter #(10,$clog2(10)) C3(.clk(carry10_out), .rst(KEY[0]), .count_out(countM_out), .carry_out(carryM_out));
+counter #(6,$clog2(6)) C4(.clk(carryM_out), .rst(KEY[0]), .count_out(countM10_out),. carry_out(carryM10_out));
+
+counter #(24,$clog2(24)) C5(.clk(carryM10_out), .rst(KEY[0]), .count_out(countH_out));
+binary_to_bcd B1(.binary(countH_out), .bcd(binary_to_bcd_out));
+seven_seg_decoder S5(.display(HEX4), .bcd_in(binary_to_bcd_out[3:0]), .leading_zero(1'b0));
+seven_seg_decoder S6(.display(HEX5), .bcd_in(binary_to_bcd_out[7:4]), .leading_zero(1'b1));
+
+
+seven_seg_decoder S1(.display(HEX0), .bcd_in(count_out), .leading_zero(1'b0));
+seven_seg_decoder S2(.display(HEX1), .bcd_in(count10_out), .leading_zero(1'b1));
+seven_seg_decoder S3(.display(HEX2), .bcd_in(countM_out), .leading_zero(1'b0));
+seven_seg_decoder S4(.display(HEX3), .bcd_in(countM10_out), .leading_zero(1'b1));
+
+
+endmodule
+

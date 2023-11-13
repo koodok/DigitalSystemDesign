@@ -1,0 +1,46 @@
+module accel_and_break(clk,accel,break,count_out);
+
+
+parameter MOD = 10;
+ parameter BITS = 4;
+
+input clk ,accel,break;
+output reg [ BITS -1:0] count_out ;
+
+
+ 
+
+ 
+always@(posedge clk )
+   begin
+		if(accel)
+			begin
+			if(count_out<countNum-1)
+				begin
+				count_out<= count_out+1'b1;
+				end
+			else
+      begin
+			count_out<=count_out;
+      
+      end
+   
+		if(down)
+			begin
+			if(count_out>0)
+			begin
+			count_out<= count_out-1'b1;
+      
+			end
+		else
+			begin
+			count_out<=count_out;
+      
+      end
+   
+   
+   
+   
+   end
+   
+endmodule 

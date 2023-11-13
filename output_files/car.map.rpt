@@ -1,0 +1,1766 @@
+Analysis & Synthesis report for car
+Sun Dec 19 23:26:42 2021
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: clock_gen:U3
+ 12. Parameter Settings for User Entity Instance: clock_gen:U3|counter:U1
+ 13. Parameter Settings for User Entity Instance: clock_gen:U3|counter:U2
+ 14. Parameter Settings for User Entity Instance: counter_distance:CFORD
+ 15. Parameter Settings for User Entity Instance: counter:C5
+ 16. Parameter Settings for User Entity Instance: counter:C6
+ 17. Parameter Settings for User Entity Instance: counter:C7
+ 18. Parameter Settings for User Entity Instance: counter:C1
+ 19. Parameter Settings for User Entity Instance: counter:C2
+ 20. Parameter Settings for User Entity Instance: counter:C3
+ 21. Parameter Settings for User Entity Instance: MUX_2to1:M1
+ 22. Parameter Settings for User Entity Instance: MUX_2to1:M2
+ 23. Parameter Settings for User Entity Instance: MUX_2to1:M3
+ 24. Parameter Settings for User Entity Instance: MUX_2to1:M4
+ 25. Parameter Settings for User Entity Instance: unit_seven_seg:S0
+ 26. Parameter Settings for User Entity Instance: seven_seg:S1
+ 27. Parameter Settings for User Entity Instance: seven_seg:S2
+ 28. Parameter Settings for User Entity Instance: seven_seg:S3
+ 29. Parameter Settings for User Entity Instance: clock_gen:U2
+ 30. Parameter Settings for User Entity Instance: clock_gen:U2|counter:U1
+ 31. Parameter Settings for User Entity Instance: clock_gen:U2|counter:U2
+ 32. Parameter Settings for User Entity Instance: accel_and_brake:AC1
+ 33. Parameter Settings for User Entity Instance: seven_seg:S5
+ 34. Parameter Settings for User Entity Instance: seven_seg:S6
+ 35. Parameter Settings for User Entity Instance: seven_seg_decoder_mode:S8
+ 36. Parameter Settings for User Entity Instance: mode_seven_seg:comb_8
+ 37. Parameter Settings for User Entity Instance: clock_gen:U4
+ 38. Parameter Settings for User Entity Instance: clock_gen:U4|counter:U1
+ 39. Parameter Settings for User Entity Instance: clock_gen:U4|counter:U2
+ 40. Port Connectivity Checks: "link_light:SR18"
+ 41. Port Connectivity Checks: "link_light:SR17"
+ 42. Port Connectivity Checks: "link_light:SR10"
+ 43. Port Connectivity Checks: "link_light:SR9"
+ 44. Port Connectivity Checks: "link_light:SR8"
+ 45. Port Connectivity Checks: "link_light:SR7"
+ 46. Port Connectivity Checks: "link_light:SR6"
+ 47. Port Connectivity Checks: "link_light:SR5"
+ 48. Port Connectivity Checks: "link_light:SR4"
+ 49. Port Connectivity Checks: "link_light:SR3"
+ 50. Port Connectivity Checks: "link_light:SR2"
+ 51. Port Connectivity Checks: "link_light:SR1"
+ 52. Port Connectivity Checks: "seatbelt:comb_10"
+ 53. Port Connectivity Checks: "signal_light:L2"
+ 54. Port Connectivity Checks: "signal_light:L1"
+ 55. Port Connectivity Checks: "clock_gen:U4|counter:U2"
+ 56. Port Connectivity Checks: "clock_gen:U4|counter:U1"
+ 57. Port Connectivity Checks: "clock_gen:U4"
+ 58. Port Connectivity Checks: "mode_seven_seg:comb_8"
+ 59. Port Connectivity Checks: "gear_to_mode:comb_7"
+ 60. Port Connectivity Checks: "seven_seg_decoder_mode:S8"
+ 61. Port Connectivity Checks: "gear_set:G1"
+ 62. Port Connectivity Checks: "seven_seg:S6"
+ 63. Port Connectivity Checks: "seven_seg:S5"
+ 64. Port Connectivity Checks: "accel_and_brake:AC1"
+ 65. Port Connectivity Checks: "clock_gen:U2|counter:U2"
+ 66. Port Connectivity Checks: "clock_gen:U2|counter:U1"
+ 67. Port Connectivity Checks: "clock_gen:U2"
+ 68. Port Connectivity Checks: "seven_seg:S3"
+ 69. Port Connectivity Checks: "unit_seven_seg:S0"
+ 70. Port Connectivity Checks: "MUX_2to1:M4"
+ 71. Port Connectivity Checks: "MUX_2to1:M3"
+ 72. Port Connectivity Checks: "MUX_2to1:M2"
+ 73. Port Connectivity Checks: "MUX_2to1:M1"
+ 74. Port Connectivity Checks: "counter:C3"
+ 75. Port Connectivity Checks: "counter:C2"
+ 76. Port Connectivity Checks: "counter:C1"
+ 77. Port Connectivity Checks: "counter:C7"
+ 78. Port Connectivity Checks: "counter:C6"
+ 79. Port Connectivity Checks: "counter:C5"
+ 80. Port Connectivity Checks: "counter_distance:CFORD"
+ 81. Port Connectivity Checks: "clock_gen:U3|counter:U2"
+ 82. Port Connectivity Checks: "clock_gen:U3|counter:U1"
+ 83. Elapsed Time Per Partition
+ 84. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Dec 19 23:26:42 2021           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; car                                             ;
+; Top-level Entity Name              ; car                                             ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 497                                             ;
+;     Total combinational functions  ; 494                                             ;
+;     Dedicated logic registers      ; 121                                             ;
+; Total registers                    ; 121                                             ;
+; Total pins                         ; 115                                             ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F672C6       ;                    ;
+; Top-level entity name                                                      ; car                ; car                ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 16     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                       ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                   ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------+---------+
+; counter.v                        ; yes             ; User Verilog HDL File        ; C:/altera/13.0sp1/car/counter.v                ;         ;
+; car.v                            ; yes             ; User Verilog HDL File        ; C:/altera/13.0sp1/car/car.v                    ;         ;
+; seven_seg.v                      ; yes             ; User Verilog HDL File        ; C:/altera/13.0sp1/car/seven_seg.v              ;         ;
+; clock_gen.v                      ; yes             ; User Verilog HDL File        ; C:/altera/13.0sp1/car/clock_gen.v              ;         ;
+; binary_to_bcd.v                  ; yes             ; User Verilog HDL File        ; C:/altera/13.0sp1/car/binary_to_bcd.v          ;         ;
+; gear_set.v                       ; yes             ; User Verilog HDL File        ; C:/altera/13.0sp1/car/gear_set.v               ;         ;
+; mode_seven_seg.v                 ; yes             ; User Verilog HDL File        ; C:/altera/13.0sp1/car/mode_seven_seg.v         ;         ;
+; link_light.v                     ; yes             ; User Verilog HDL File        ; C:/altera/13.0sp1/car/link_light.v             ;         ;
+; signal_light.v                   ; yes             ; User Verilog HDL File        ; C:/altera/13.0sp1/car/signal_light.v           ;         ;
+; hazard_light.v                   ; yes             ; User Verilog HDL File        ; C:/altera/13.0sp1/car/hazard_light.v           ;         ;
+; gear_to_mode.v                   ; yes             ; User Verilog HDL File        ; C:/altera/13.0sp1/car/gear_to_mode.v           ;         ;
+; seatbelt.v                       ; yes             ; User Verilog HDL File        ; C:/altera/13.0sp1/car/seatbelt.v               ;         ;
+; accel_and_brake.v                ; yes             ; User Verilog HDL File        ; C:/altera/13.0sp1/car/accel_and_brake.v        ;         ;
+; counter_distance.v               ; yes             ; User Verilog HDL File        ; C:/altera/13.0sp1/car/counter_distance.v       ;         ;
+; MUX_2to1.v                       ; yes             ; User Verilog HDL File        ; C:/altera/13.0sp1/car/MUX_2to1.v               ;         ;
+; unit_seven_seg.v                 ; yes             ; User Verilog HDL File        ; C:/altera/13.0sp1/car/unit_seven_seg.v         ;         ;
+; seven_seg_decoder_mode.v         ; yes             ; Auto-Found Verilog HDL File  ; C:/altera/13.0sp1/car/seven_seg_decoder_mode.v ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 497   ;
+;                                             ;       ;
+; Total combinational functions               ; 494   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 244   ;
+;     -- 3 input functions                    ; 80    ;
+;     -- <=2 input functions                  ; 170   ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 360   ;
+;     -- arithmetic mode                      ; 134   ;
+;                                             ;       ;
+; Total registers                             ; 121   ;
+;     -- Dedicated logic registers            ; 121   ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 115   ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; SW[0] ;
+; Maximum fan-out                             ; 69    ;
+; Total fan-out                               ; 2007  ;
+; Average fan-out                             ; 2.75  ;
++---------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                        ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+--------------+
+; Compilation Hierarchy Node     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name            ; Library Name ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+--------------+
+; |car                           ; 494 (2)           ; 121 (0)      ; 0           ; 0            ; 0       ; 0         ; 115  ; 0            ; |car                           ; work         ;
+;    |MUX_2to1:M2|               ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|MUX_2to1:M2               ; work         ;
+;    |MUX_2to1:M3|               ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|MUX_2to1:M3               ; work         ;
+;    |MUX_2to1:M4|               ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|MUX_2to1:M4               ; work         ;
+;    |accel_and_brake:AC1|       ; 108 (108)         ; 7 (7)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|accel_and_brake:AC1       ; work         ;
+;    |binary_to_bcd:B1|          ; 129 (129)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|binary_to_bcd:B1          ; work         ;
+;    |clock_gen:U2|              ; 31 (0)            ; 25 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|clock_gen:U2              ; work         ;
+;       |counter:U1|             ; 30 (30)           ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|clock_gen:U2|counter:U1   ; work         ;
+;       |counter:U2|             ; 1 (1)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|clock_gen:U2|counter:U2   ; work         ;
+;    |clock_gen:U3|              ; 17 (0)            ; 15 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|clock_gen:U3              ; work         ;
+;       |counter:U1|             ; 16 (16)           ; 13 (13)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|clock_gen:U3|counter:U1   ; work         ;
+;       |counter:U2|             ; 1 (1)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|clock_gen:U3|counter:U2   ; work         ;
+;    |clock_gen:U4|              ; 35 (0)            ; 28 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|clock_gen:U4              ; work         ;
+;       |counter:U1|             ; 34 (34)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|clock_gen:U4|counter:U1   ; work         ;
+;       |counter:U2|             ; 1 (1)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|clock_gen:U4|counter:U2   ; work         ;
+;    |counter:C1|                ; 5 (5)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|counter:C1                ; work         ;
+;    |counter:C2|                ; 5 (5)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|counter:C2                ; work         ;
+;    |counter:C3|                ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|counter:C3                ; work         ;
+;    |counter:C5|                ; 5 (5)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|counter:C5                ; work         ;
+;    |counter:C6|                ; 5 (5)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|counter:C6                ; work         ;
+;    |counter:C7|                ; 5 (5)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|counter:C7                ; work         ;
+;    |counter_distance:CFORD|    ; 25 (25)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|counter_distance:CFORD    ; work         ;
+;    |gear_set:G1|               ; 41 (41)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|gear_set:G1               ; work         ;
+;    |gear_to_mode:comb_7|       ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|gear_to_mode:comb_7       ; work         ;
+;    |mode_seven_seg:comb_8|     ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|mode_seven_seg:comb_8     ; work         ;
+;    |seatbelt:comb_10|          ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|seatbelt:comb_10          ; work         ;
+;    |seven_seg:S1|              ; 13 (13)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|seven_seg:S1              ; work         ;
+;    |seven_seg:S2|              ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|seven_seg:S2              ; work         ;
+;    |seven_seg:S3|              ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|seven_seg:S3              ; work         ;
+;    |seven_seg:S5|              ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|seven_seg:S5              ; work         ;
+;    |seven_seg:S6|              ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|seven_seg:S6              ; work         ;
+;    |seven_seg_decoder_mode:S8| ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|seven_seg_decoder_mode:S8 ; work         ;
+;    |signal_light:L1|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|signal_light:L1           ; work         ;
+;    |signal_light:L2|           ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |car|signal_light:L2           ; work         ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                            ;
++----------------------------------------------------+----------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal              ; Free of Timing Hazards ;
++----------------------------------------------------+----------------------------------+------------------------+
+; gear_set:G1|gear[1]                                ; gear_set:G1|gear[2]              ; yes                    ;
+; gear_set:G1|gear[0]                                ; gear_set:G1|gear[2]              ; yes                    ;
+; gear_set:G1|gear[2]                                ; gear_set:G1|gear[2]              ; yes                    ;
+; gear_to_mode:comb_7|MODE[1]                        ; accel_and_brake:AC1|count_out[3] ; yes                    ;
+; gear_to_mode:comb_7|MODE[0]                        ; accel_and_brake:AC1|count_out[3] ; yes                    ;
+; Number of user-specified and inferred latches = 5  ;                                  ;                        ;
++----------------------------------------------------+----------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 121   ;
+; Number of registers using Synchronous Clear  ; 75    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 68    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 22    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+; 31:1               ; 6 bits    ; 120 LEs       ; 18 LEs               ; 102 LEs                ; Yes        ; |car|accel_and_brake:AC1|count_out[3] ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |car|binary_to_bcd:B1|bcd_out[4]      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_gen:U3 ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; MOD            ; 2500  ; Signed Integer                   ;
+; BITS           ; 12    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_gen:U3|counter:U1 ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; MOD            ; 2500  ; Signed Integer                              ;
+; BITS           ; 12    ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_gen:U3|counter:U2 ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; MOD            ; 2     ; Signed Integer                              ;
+; BITS           ; 1     ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter_distance:CFORD ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; MOD            ; 36000 ; Signed Integer                             ;
+; BITS           ; 16    ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:C5 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; MOD            ; 10    ; Signed Integer                 ;
+; BITS           ; 4     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:C6 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; MOD            ; 10    ; Signed Integer                 ;
+; BITS           ; 4     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:C7 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; MOD            ; 10    ; Signed Integer                 ;
+; BITS           ; 4     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:C1 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; MOD            ; 10    ; Signed Integer                 ;
+; BITS           ; 4     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:C2 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; MOD            ; 10    ; Signed Integer                 ;
+; BITS           ; 4     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter:C3 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; MOD            ; 10    ; Signed Integer                 ;
+; BITS           ; 4     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MUX_2to1:M1 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; SIZE           ; 1     ; Signed Integer                  ;
+; OUTSIZE        ; 1     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MUX_2to1:M2 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; SIZE           ; 4     ; Signed Integer                  ;
+; OUTSIZE        ; 8     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MUX_2to1:M3 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; SIZE           ; 4     ; Signed Integer                  ;
+; OUTSIZE        ; 8     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: MUX_2to1:M4 ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; SIZE           ; 4     ; Signed Integer                  ;
+; OUTSIZE        ; 8     ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: unit_seven_seg:S0 ;
++----------------+---------+-------------------------------------+
+; Parameter Name ; Value   ; Type                                ;
++----------------+---------+-------------------------------------+
+; BLANK          ; 1111111 ; Unsigned Binary                     ;
+; K              ; 0001010 ; Unsigned Binary                     ;
+; M              ; 1101010 ; Unsigned Binary                     ;
++----------------+---------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: seven_seg:S1 ;
++----------------+---------+--------------------------------+
+; Parameter Name ; Value   ; Type                           ;
++----------------+---------+--------------------------------+
+; BLANK          ; 1111111 ; Unsigned Binary                ;
+; ZERO           ; 1000000 ; Unsigned Binary                ;
+; ONE            ; 1111001 ; Unsigned Binary                ;
+; TWO            ; 0100100 ; Unsigned Binary                ;
+; THREE          ; 0110000 ; Unsigned Binary                ;
+; FOUR           ; 0011001 ; Unsigned Binary                ;
+; FIVE           ; 0010010 ; Unsigned Binary                ;
+; SIX            ; 0000010 ; Unsigned Binary                ;
+; SEVEN          ; 1111000 ; Unsigned Binary                ;
+; EIGHT          ; 0000000 ; Unsigned Binary                ;
+; NINE           ; 0010000 ; Unsigned Binary                ;
++----------------+---------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: seven_seg:S2 ;
++----------------+---------+--------------------------------+
+; Parameter Name ; Value   ; Type                           ;
++----------------+---------+--------------------------------+
+; BLANK          ; 1111111 ; Unsigned Binary                ;
+; ZERO           ; 1000000 ; Unsigned Binary                ;
+; ONE            ; 1111001 ; Unsigned Binary                ;
+; TWO            ; 0100100 ; Unsigned Binary                ;
+; THREE          ; 0110000 ; Unsigned Binary                ;
+; FOUR           ; 0011001 ; Unsigned Binary                ;
+; FIVE           ; 0010010 ; Unsigned Binary                ;
+; SIX            ; 0000010 ; Unsigned Binary                ;
+; SEVEN          ; 1111000 ; Unsigned Binary                ;
+; EIGHT          ; 0000000 ; Unsigned Binary                ;
+; NINE           ; 0010000 ; Unsigned Binary                ;
++----------------+---------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: seven_seg:S3 ;
++----------------+---------+--------------------------------+
+; Parameter Name ; Value   ; Type                           ;
++----------------+---------+--------------------------------+
+; BLANK          ; 1111111 ; Unsigned Binary                ;
+; ZERO           ; 1000000 ; Unsigned Binary                ;
+; ONE            ; 1111001 ; Unsigned Binary                ;
+; TWO            ; 0100100 ; Unsigned Binary                ;
+; THREE          ; 0110000 ; Unsigned Binary                ;
+; FOUR           ; 0011001 ; Unsigned Binary                ;
+; FIVE           ; 0010010 ; Unsigned Binary                ;
+; SIX            ; 0000010 ; Unsigned Binary                ;
+; SEVEN          ; 1111000 ; Unsigned Binary                ;
+; EIGHT          ; 0000000 ; Unsigned Binary                ;
+; NINE           ; 0010000 ; Unsigned Binary                ;
++----------------+---------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_gen:U2 ;
++----------------+---------+--------------------------------+
+; Parameter Name ; Value   ; Type                           ;
++----------------+---------+--------------------------------+
+; MOD            ; 2500000 ; Signed Integer                 ;
+; BITS           ; 22      ; Signed Integer                 ;
++----------------+---------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_gen:U2|counter:U1 ;
++----------------+---------+-------------------------------------------+
+; Parameter Name ; Value   ; Type                                      ;
++----------------+---------+-------------------------------------------+
+; MOD            ; 2500000 ; Signed Integer                            ;
+; BITS           ; 22      ; Signed Integer                            ;
++----------------+---------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_gen:U2|counter:U2 ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; MOD            ; 2     ; Signed Integer                              ;
+; BITS           ; 1     ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: accel_and_brake:AC1 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; MOD            ; 100   ; Signed Integer                          ;
+; BITS           ; 7     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: seven_seg:S5 ;
++----------------+---------+--------------------------------+
+; Parameter Name ; Value   ; Type                           ;
++----------------+---------+--------------------------------+
+; BLANK          ; 1111111 ; Unsigned Binary                ;
+; ZERO           ; 1000000 ; Unsigned Binary                ;
+; ONE            ; 1111001 ; Unsigned Binary                ;
+; TWO            ; 0100100 ; Unsigned Binary                ;
+; THREE          ; 0110000 ; Unsigned Binary                ;
+; FOUR           ; 0011001 ; Unsigned Binary                ;
+; FIVE           ; 0010010 ; Unsigned Binary                ;
+; SIX            ; 0000010 ; Unsigned Binary                ;
+; SEVEN          ; 1111000 ; Unsigned Binary                ;
+; EIGHT          ; 0000000 ; Unsigned Binary                ;
+; NINE           ; 0010000 ; Unsigned Binary                ;
++----------------+---------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: seven_seg:S6 ;
++----------------+---------+--------------------------------+
+; Parameter Name ; Value   ; Type                           ;
++----------------+---------+--------------------------------+
+; BLANK          ; 1111111 ; Unsigned Binary                ;
+; ZERO           ; 1000000 ; Unsigned Binary                ;
+; ONE            ; 1111001 ; Unsigned Binary                ;
+; TWO            ; 0100100 ; Unsigned Binary                ;
+; THREE          ; 0110000 ; Unsigned Binary                ;
+; FOUR           ; 0011001 ; Unsigned Binary                ;
+; FIVE           ; 0010010 ; Unsigned Binary                ;
+; SIX            ; 0000010 ; Unsigned Binary                ;
+; SEVEN          ; 1111000 ; Unsigned Binary                ;
+; EIGHT          ; 0000000 ; Unsigned Binary                ;
+; NINE           ; 0010000 ; Unsigned Binary                ;
++----------------+---------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: seven_seg_decoder_mode:S8 ;
++----------------+---------+---------------------------------------------+
+; Parameter Name ; Value   ; Type                                        ;
++----------------+---------+---------------------------------------------+
+; BLANK          ; 1111111 ; Unsigned Binary                             ;
+; ZERO           ; 1000000 ; Unsigned Binary                             ;
+; ONE            ; 1111001 ; Unsigned Binary                             ;
+; TWO            ; 0100100 ; Unsigned Binary                             ;
+; THREE          ; 0110000 ; Unsigned Binary                             ;
+; FOUR           ; 0011001 ; Unsigned Binary                             ;
+; FIVE           ; 0010010 ; Unsigned Binary                             ;
+; SIX            ; 0111111 ; Unsigned Binary                             ;
+; SEVEN          ; 1111000 ; Unsigned Binary                             ;
+; EIGHT          ; 0000000 ; Unsigned Binary                             ;
+; NINE           ; 0010000 ; Unsigned Binary                             ;
++----------------+---------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mode_seven_seg:comb_8 ;
++----------------+---------+-----------------------------------------+
+; Parameter Name ; Value   ; Type                                    ;
++----------------+---------+-----------------------------------------+
+; BLANK          ; 1111111 ; Unsigned Binary                         ;
+; ZERO           ; 1000000 ; Unsigned Binary                         ;
+; P              ; 0001100 ; Unsigned Binary                         ;
+; R              ; 0101111 ; Unsigned Binary                         ;
+; D              ; 0100001 ; Unsigned Binary                         ;
++----------------+---------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_gen:U4 ;
++----------------+----------+-------------------------------+
+; Parameter Name ; Value    ; Type                          ;
++----------------+----------+-------------------------------+
+; MOD            ; 25000000 ; Signed Integer                ;
+; BITS           ; 25       ; Signed Integer                ;
++----------------+----------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_gen:U4|counter:U1 ;
++----------------+----------+------------------------------------------+
+; Parameter Name ; Value    ; Type                                     ;
++----------------+----------+------------------------------------------+
+; MOD            ; 25000000 ; Signed Integer                           ;
+; BITS           ; 25       ; Signed Integer                           ;
++----------------+----------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clock_gen:U4|counter:U2 ;
++----------------+-------+---------------------------------------------+
+; Parameter Name ; Value ; Type                                        ;
++----------------+-------+---------------------------------------------+
+; MOD            ; 2     ; Signed Integer                              ;
+; BITS           ; 1     ; Signed Integer                              ;
++----------------+-------+---------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "link_light:SR18"                                                                                                                                                                ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; clk  ; Input ; Warning  ; Input port expression (9 bits) is wider than the input port (1 bits) it drives.  The 8 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "link_light:SR17"                                                                                                                                                                ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; clk  ; Input ; Warning  ; Input port expression (9 bits) is wider than the input port (1 bits) it drives.  The 8 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "link_light:SR10"                                                                                                                                                                ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; clk  ; Input ; Warning  ; Input port expression (9 bits) is wider than the input port (1 bits) it drives.  The 8 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "link_light:SR9"                                                                                                                                                                 ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; clk  ; Input ; Warning  ; Input port expression (9 bits) is wider than the input port (1 bits) it drives.  The 8 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "link_light:SR8"                                                                                                                                                                 ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; clk  ; Input ; Warning  ; Input port expression (9 bits) is wider than the input port (1 bits) it drives.  The 8 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "link_light:SR7"                                                                                                                                                                 ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; clk  ; Input ; Warning  ; Input port expression (9 bits) is wider than the input port (1 bits) it drives.  The 8 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "link_light:SR6"                                                                                                                                                                 ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; clk  ; Input ; Warning  ; Input port expression (9 bits) is wider than the input port (1 bits) it drives.  The 8 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "link_light:SR5"                                                                                                                                                                 ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; clk  ; Input ; Warning  ; Input port expression (9 bits) is wider than the input port (1 bits) it drives.  The 8 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "link_light:SR4"                                                                                                                                                                 ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; clk  ; Input ; Warning  ; Input port expression (9 bits) is wider than the input port (1 bits) it drives.  The 8 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "link_light:SR3"                                                                                                                                                                 ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; clk  ; Input ; Warning  ; Input port expression (9 bits) is wider than the input port (1 bits) it drives.  The 8 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "link_light:SR2"                                                                                                                                                                 ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; clk  ; Input ; Warning  ; Input port expression (9 bits) is wider than the input port (1 bits) it drives.  The 8 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "link_light:SR1"                                                                                                                                                                 ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; clk  ; Input ; Warning  ; Input port expression (9 bits) is wider than the input port (1 bits) it drives.  The 8 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "seatbelt:comb_10"                                                                                                                                                                 ;
++--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                          ;
++--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; clk_in ; Input ; Warning  ; Input port expression (9 bits) is wider than the input port (1 bits) it drives.  The 8 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "signal_light:L2"                                                                                                                                                                  ;
++--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                          ;
++--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; clk_in ; Input ; Warning  ; Input port expression (9 bits) is wider than the input port (1 bits) it drives.  The 8 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "signal_light:L1"                                                                                                                                                                  ;
++--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                          ;
++--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; clk_in ; Input ; Warning  ; Input port expression (9 bits) is wider than the input port (1 bits) it drives.  The 8 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_gen:U4|counter:U2"                                                                                      ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                  ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; count_out ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_gen:U4|counter:U1"                                                                                      ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                  ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; count_out ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_gen:U4"                                                                                                                                                            ;
++---------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                                               ;
++---------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; CLK_1Hz ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (9 bits) it drives.  The 8 most-significant bit(s) in the port expression will be connected to GND. ;
++---------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "mode_seven_seg:comb_8" ;
++--------------+-------+----------+-----------------+
+; Port         ; Type  ; Severity ; Details         ;
++--------------+-------+----------+-----------------+
+; leading_zero ; Input ; Info     ; Stuck at GND    ;
++--------------+-------+----------+-----------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "gear_to_mode:comb_7"                                                                                                                                                            ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; GEAR ; Input ; Warning  ; Input port expression (4 bits) is wider than the input port (3 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------+
+; Port Connectivity Checks: "seven_seg_decoder_mode:S8" ;
++--------------+-------+----------+---------------------+
+; Port         ; Type  ; Severity ; Details             ;
++--------------+-------+----------+---------------------+
+; leading_zero ; Input ; Info     ; Stuck at GND        ;
++--------------+-------+----------+---------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "gear_set:G1"                                                                                                                                                          ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                               ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; gear ; Output ; Warning  ; Output or bidir port (3 bits) is smaller than the port expression (4 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "seven_seg:S6"       ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; leading_zero ; Input ; Info     ; Stuck at VCC ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "seven_seg:S5"       ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; leading_zero ; Input ; Info     ; Stuck at GND ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "accel_and_brake:AC1"                                                                                                                                                                  ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                                                                                          ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; clk       ; Input  ; Warning  ; Input port expression (9 bits) is wider than the input port (1 bits) it drives.  The 8 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; gear      ; Input  ; Warning  ; Input port expression (4 bits) is wider than the input port (3 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; count_out ; Output ; Warning  ; Output or bidir port (7 bits) is smaller than the port expression (8 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND.            ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_gen:U2|counter:U2"                                                                                      ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                  ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; count_out ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_gen:U2|counter:U1"                                                                                      ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                  ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; count_out ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_gen:U2"                                                                                                                                                            ;
++---------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                                               ;
++---------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; CLK_1Hz ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (9 bits) it drives.  The 8 most-significant bit(s) in the port expression will be connected to GND. ;
++---------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "seven_seg:S3"       ;
++--------------+-------+----------+--------------+
+; Port         ; Type  ; Severity ; Details      ;
++--------------+-------+----------+--------------+
+; leading_zero ; Input ; Info     ; Stuck at VCC ;
++--------------+-------+----------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "unit_seven_seg:S0"                                                                                                                                                              ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                          ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; in   ; Input ; Warning  ; Input port expression (7 bits) is wider than the input port (1 bits) it drives.  The 6 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MUX_2to1:M4"                                                                                                           ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; out  ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (4 bits) it drives; bit(s) "out[7..4]" have no fanouts ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MUX_2to1:M3"                                                                                                           ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; out  ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (4 bits) it drives; bit(s) "out[7..4]" have no fanouts ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MUX_2to1:M2"                                                                                                           ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; out  ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (4 bits) it drives; bit(s) "out[7..4]" have no fanouts ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MUX_2to1:M1"                                                                                                                                                          ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                                               ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; a    ; Input  ; Info     ; Stuck at VCC                                                                                                                                                          ;
+; b    ; Input  ; Info     ; Stuck at GND                                                                                                                                                          ;
+; out  ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (7 bits) it drives.  The 6 most-significant bit(s) in the port expression will be connected to GND. ;
++------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter:C3"                                                                              ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; rst       ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; carry_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------+
+; Port Connectivity Checks: "counter:C2" ;
++------+-------+----------+--------------+
+; Port ; Type  ; Severity ; Details      ;
++------+-------+----------+--------------+
+; rst  ; Input ; Info     ; Stuck at VCC ;
++------+-------+----------+--------------+
+
+
++----------------------------------------+
+; Port Connectivity Checks: "counter:C1" ;
++------+-------+----------+--------------+
+; Port ; Type  ; Severity ; Details      ;
++------+-------+----------+--------------+
+; rst  ; Input ; Info     ; Stuck at VCC ;
++------+-------+----------+--------------+
+
+
++----------------------------------------+
+; Port Connectivity Checks: "counter:C7" ;
++------+-------+----------+--------------+
+; Port ; Type  ; Severity ; Details      ;
++------+-------+----------+--------------+
+; rst  ; Input ; Info     ; Stuck at VCC ;
++------+-------+----------+--------------+
+
+
++----------------------------------------+
+; Port Connectivity Checks: "counter:C6" ;
++------+-------+----------+--------------+
+; Port ; Type  ; Severity ; Details      ;
++------+-------+----------+--------------+
+; rst  ; Input ; Info     ; Stuck at VCC ;
++------+-------+----------+--------------+
+
+
++----------------------------------------+
+; Port Connectivity Checks: "counter:C5" ;
++------+-------+----------+--------------+
+; Port ; Type  ; Severity ; Details      ;
++------+-------+----------+--------------+
+; rst  ; Input ; Info     ; Stuck at VCC ;
++------+-------+----------+--------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter_distance:CFORD"                                                                                                                                                               ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                                                                                          ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; velocity  ; Input  ; Warning  ; Input port expression (8 bits) is wider than the input port (7 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
+; count_out ; Output ; Warning  ; Output or bidir port (16 bits) is wider than the port expression (4 bits) it drives; bit(s) "count_out[15..4]" have no fanouts                                                   ;
+; count_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                              ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_gen:U3|counter:U2"                                                                                      ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                  ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; count_out ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "clock_gen:U3|counter:U1"                                                                                      ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                                                  ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+; count_out ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+----------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sun Dec 19 23:26:39 2021
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off car -c car
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file counter.v
+    Info (12023): Found entity 1: counter
+Info (12021): Found 1 design units, including 1 entities, in source file car.v
+    Info (12023): Found entity 1: car
+Info (12021): Found 1 design units, including 1 entities, in source file seven_seg.v
+    Info (12023): Found entity 1: seven_seg
+Info (12021): Found 1 design units, including 1 entities, in source file clock_gen.v
+    Info (12023): Found entity 1: clock_gen
+Info (12021): Found 1 design units, including 1 entities, in source file binary_to_bcd.v
+    Info (12023): Found entity 1: binary_to_bcd
+Info (12021): Found 1 design units, including 1 entities, in source file gear_set.v
+    Info (12023): Found entity 1: gear_set
+Info (12021): Found 1 design units, including 1 entities, in source file mode_seven_seg.v
+    Info (12023): Found entity 1: mode_seven_seg
+Info (12021): Found 1 design units, including 1 entities, in source file link_light.v
+    Info (12023): Found entity 1: link_light
+Info (12021): Found 1 design units, including 1 entities, in source file winker.v
+    Info (12023): Found entity 1: winker
+Info (12021): Found 1 design units, including 1 entities, in source file signal_light.v
+    Info (12023): Found entity 1: signal_light
+Info (12021): Found 1 design units, including 1 entities, in source file hazard_light.v
+    Info (12023): Found entity 1: hazard_light
+Info (12021): Found 1 design units, including 1 entities, in source file gear_to_mode.v
+    Info (12023): Found entity 1: gear_to_mode
+Info (12021): Found 1 design units, including 1 entities, in source file seatbelt.v
+    Info (12023): Found entity 1: seatbelt
+Info (12021): Found 1 design units, including 1 entities, in source file accel_and_brake.v
+    Info (12023): Found entity 1: accel_and_brake
+Info (12021): Found 1 design units, including 1 entities, in source file counter_distance.v
+    Info (12023): Found entity 1: counter_distance
+Info (12021): Found 1 design units, including 1 entities, in source file mux_2to1.v
+    Info (12023): Found entity 1: MUX_2to1
+Info (12021): Found 1 design units, including 1 entities, in source file unit_seven_seg.v
+    Info (12023): Found entity 1: unit_seven_seg
+Critical Warning (10846): Verilog HDL Instantiation warning at car.v(99): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at car.v(100): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at car.v(108): instance has no name
+Critical Warning (10846): Verilog HDL Instantiation warning at car.v(110): instance has no name
+Info (12127): Elaborating entity "car" for the top level hierarchy
+Warning (10034): Output port "LEDG[17..8]" at car.v(6) has no driver
+Warning (10034): Output port "LEDG[2]" at car.v(6) has no driver
+Warning (10034): Output port "LEDR[15..10]" at car.v(7) has no driver
+Info (12128): Elaborating entity "clock_gen" for hierarchy "clock_gen:U3"
+Info (12128): Elaborating entity "counter" for hierarchy "clock_gen:U3|counter:U1"
+Warning (10230): Verilog HDL assignment warning at counter.v(20): truncated value with size 32 to match size of target (12)
+Info (12128): Elaborating entity "counter" for hierarchy "clock_gen:U3|counter:U2"
+Warning (10230): Verilog HDL assignment warning at counter.v(20): truncated value with size 32 to match size of target (1)
+Info (12128): Elaborating entity "counter_distance" for hierarchy "counter_distance:CFORD"
+Info (12128): Elaborating entity "counter" for hierarchy "counter:C5"
+Warning (10230): Verilog HDL assignment warning at counter.v(20): truncated value with size 32 to match size of target (4)
+Info (12128): Elaborating entity "MUX_2to1" for hierarchy "MUX_2to1:M1"
+Info (12128): Elaborating entity "MUX_2to1" for hierarchy "MUX_2to1:M2"
+Info (12128): Elaborating entity "unit_seven_seg" for hierarchy "unit_seven_seg:S0"
+Info (12128): Elaborating entity "seven_seg" for hierarchy "seven_seg:S1"
+Warning (10235): Verilog HDL Always Construct warning at seven_seg.v(19): variable "leading_zero" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (12128): Elaborating entity "clock_gen" for hierarchy "clock_gen:U2"
+Info (12128): Elaborating entity "counter" for hierarchy "clock_gen:U2|counter:U1"
+Warning (10230): Verilog HDL assignment warning at counter.v(20): truncated value with size 32 to match size of target (22)
+Info (12128): Elaborating entity "accel_and_brake" for hierarchy "accel_and_brake:AC1"
+Warning (10230): Verilog HDL assignment warning at accel_and_brake.v(24): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at accel_and_brake.v(33): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at accel_and_brake.v(48): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at accel_and_brake.v(57): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at accel_and_brake.v(72): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at accel_and_brake.v(81): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at accel_and_brake.v(96): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at accel_and_brake.v(105): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at accel_and_brake.v(120): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at accel_and_brake.v(129): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at accel_and_brake.v(144): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at accel_and_brake.v(153): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at accel_and_brake.v(193): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at accel_and_brake.v(197): truncated value with size 32 to match size of target (7)
+Warning (10230): Verilog HDL assignment warning at accel_and_brake.v(201): truncated value with size 32 to match size of target (7)
+Info (12128): Elaborating entity "binary_to_bcd" for hierarchy "binary_to_bcd:B1"
+Warning (10230): Verilog HDL assignment warning at binary_to_bcd.v(13): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at binary_to_bcd.v(17): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at binary_to_bcd.v(21): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at binary_to_bcd.v(25): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at binary_to_bcd.v(29): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at binary_to_bcd.v(33): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at binary_to_bcd.v(37): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at binary_to_bcd.v(41): truncated value with size 32 to match size of target (8)
+Warning (10230): Verilog HDL assignment warning at binary_to_bcd.v(43): truncated value with size 32 to match size of target (8)
+Info (12128): Elaborating entity "gear_set" for hierarchy "gear_set:G1"
+Warning (10240): Verilog HDL Always Construct warning at gear_set.v(11): inferring latch(es) for variable "gear", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "gear[0]" at gear_set.v(11)
+Info (10041): Inferred latch for "gear[1]" at gear_set.v(11)
+Info (10041): Inferred latch for "gear[2]" at gear_set.v(11)
+Warning (12125): Using design file seven_seg_decoder_mode.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: seven_seg_decoder_mode
+Info (12128): Elaborating entity "seven_seg_decoder_mode" for hierarchy "seven_seg_decoder_mode:S8"
+Warning (10235): Verilog HDL Always Construct warning at seven_seg_decoder_mode.v(19): variable "leading_zero" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (12128): Elaborating entity "gear_to_mode" for hierarchy "gear_to_mode:comb_7"
+Warning (10270): Verilog HDL Case Statement warning at gear_to_mode.v(8): incomplete case statement has no default case item
+Warning (10240): Verilog HDL Always Construct warning at gear_to_mode.v(6): inferring latch(es) for variable "MODE", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "MODE[0]" at gear_to_mode.v(6)
+Info (10041): Inferred latch for "MODE[1]" at gear_to_mode.v(6)
+Info (12128): Elaborating entity "mode_seven_seg" for hierarchy "mode_seven_seg:comb_8"
+Warning (10235): Verilog HDL Always Construct warning at mode_seven_seg.v(13): variable "leading_zero" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (12128): Elaborating entity "clock_gen" for hierarchy "clock_gen:U4"
+Info (12128): Elaborating entity "counter" for hierarchy "clock_gen:U4|counter:U1"
+Warning (10230): Verilog HDL assignment warning at counter.v(20): truncated value with size 32 to match size of target (25)
+Info (12128): Elaborating entity "signal_light" for hierarchy "signal_light:L1"
+Warning (10235): Verilog HDL Always Construct warning at signal_light.v(8): variable "rst" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at signal_light.v(15): variable "rst" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at signal_light.v(16): variable "rst" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (12128): Elaborating entity "hazard_light" for hierarchy "hazard_light:comb_9"
+Info (12128): Elaborating entity "seatbelt" for hierarchy "seatbelt:comb_10"
+Warning (10235): Verilog HDL Always Construct warning at seatbelt.v(8): variable "rst" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Info (12128): Elaborating entity "link_light" for hierarchy "link_light:SR1"
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gear_out_w[3]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gear_out_w[3]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gear_out_w[3]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gear_out_w[3]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gear_out_w[3]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gear_out_w[3]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gear_out_w[3]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gear_out_w[3]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gear_out_w[3]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gear_out_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gear_out_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gear_out_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gear_out_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gear_out_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gear_out_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gear_out_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gear_out_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "velocity_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[1]" is missing source, defaulting to GND
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out1_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[8]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "gen_out2_w[1]" is missing source, defaulting to GND
+    Warning (12110): Net "gear_out_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "velocity_w[7]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[6]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[5]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[4]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[3]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[2]" is missing source, defaulting to GND
+    Warning (12110): Net "seg_for_dis_w[1]" is missing source, defaulting to GND
+Warning (12241): 32 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch gear_set:G1|gear[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[4]
+Warning (13012): Latch gear_set:G1|gear[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[4]
+Warning (13012): Latch gear_set:G1|gear[2] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal SW[4]
+Warning (13012): Latch gear_to_mode:comb_7|MODE[1] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal gear_set:G1|gear[1]
+Warning (13012): Latch gear_to_mode:comb_7|MODE[0] has unsafe behavior
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal gear_set:G1|gear[1]
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDG[2]" is stuck at GND
+    Warning (13410): Pin "LEDG[8]" is stuck at GND
+    Warning (13410): Pin "LEDG[9]" is stuck at GND
+    Warning (13410): Pin "LEDG[10]" is stuck at GND
+    Warning (13410): Pin "LEDG[11]" is stuck at GND
+    Warning (13410): Pin "LEDG[12]" is stuck at GND
+    Warning (13410): Pin "LEDG[13]" is stuck at GND
+    Warning (13410): Pin "LEDG[14]" is stuck at GND
+    Warning (13410): Pin "LEDG[15]" is stuck at GND
+    Warning (13410): Pin "LEDG[16]" is stuck at GND
+    Warning (13410): Pin "LEDG[17]" is stuck at GND
+    Warning (13410): Pin "LEDR[10]" is stuck at GND
+    Warning (13410): Pin "LEDR[11]" is stuck at GND
+    Warning (13410): Pin "LEDR[12]" is stuck at GND
+    Warning (13410): Pin "LEDR[13]" is stuck at GND
+    Warning (13410): Pin "LEDR[14]" is stuck at GND
+    Warning (13410): Pin "LEDR[15]" is stuck at GND
+    Warning (13410): Pin "HEX0[0]" is stuck at GND
+    Warning (13410): Pin "HEX0[1]" is stuck at VCC
+    Warning (13410): Pin "HEX0[2]" is stuck at GND
+    Warning (13410): Pin "HEX0[3]" is stuck at VCC
+    Warning (13410): Pin "HEX0[4]" is stuck at GND
+    Warning (13410): Pin "HEX7[4]" is stuck at GND
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 5 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[10]"
+    Warning (15610): No output dependent on input pin "SW[11]"
+    Warning (15610): No output dependent on input pin "SW[12]"
+    Warning (15610): No output dependent on input pin "SW[13]"
+    Warning (15610): No output dependent on input pin "SW[14]"
+Info (21057): Implemented 615 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 23 input pins
+    Info (21059): Implemented 92 output pins
+    Info (21061): Implemented 500 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 533 warnings
+    Info: Peak virtual memory: 4602 megabytes
+    Info: Processing ended: Sun Dec 19 23:26:42 2021
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+

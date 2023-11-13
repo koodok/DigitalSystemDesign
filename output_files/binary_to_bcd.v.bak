@@ -1,0 +1,22 @@
+module Binary_to_BCD (binary_in, bcd_out);
+parameter MOD = 10;
+parameter BITS = 7;
+
+input [4:0] binary_in;
+output reg[7:0] bcd_out;
+
+always@(binary_in)
+   if(binary_in < 10)
+      begin
+         bcd_out <= binary_in;
+      end
+   else if(binary_in <20)
+      begin
+         bcd_out <= binary_in+6;
+      end
+   else if(binary_in <30)
+      begin
+         bcd_out <= binary_in+12;
+      end
+      
+endmodule

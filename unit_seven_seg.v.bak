@@ -1,0 +1,16 @@
+module unit_seven_seg (display, in);
+   output reg [6:0] display;
+   input in;
+   
+   parameter BLANK = 7'b111_1111;
+   parameter K = 7'b000_1010;
+   parameter M = 7'b110_1010;
+   
+   always @ (in)
+		 case (in)
+         0: display = K;
+         1: display = M;
+         
+         default: display = BLANK;
+       endcase
+endmodule 

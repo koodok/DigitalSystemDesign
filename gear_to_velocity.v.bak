@@ -1,0 +1,5 @@
+module gear_to_velocity(gear,velocity)
+
+input gear;
+
+output reg velocity;

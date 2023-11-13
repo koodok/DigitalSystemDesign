@@ -1,0 +1,43 @@
+module seven_seg_decoder_mode(MODE,bcd_in,display);
+
+input [1:0] MODE;
+input [3:0] bcd_in;
+
+output reg [7:0] display;
+
+ parameter AM = 7'b000_1000;
+ parameter PM = 7'b000_1100;
+ parameter t = 7'b000_0111;
+ parameter BLANK = 7'b111_1111;
+ parameter ZERO = 7'b100_0000;
+ parameter ONE = 7'b111_1001;
+ parameter TWO = 7'b010_0100;
+ parameter THREE = 7'b011_0000;
+ parameter FOUR = 7'b001_1001;
+ parameter FIVE = 7'b001_0010;
+ parameter SIX= 7'b000_0010;
+ parameter SEVEN = 7'b111_1000;
+ parameter EIGHT = 7'b000_0000;
+ parameter NINE = 7'b001_0000;
+ 
+ always @ (bcd_in)
+  if(MODE == 0)
+   begin
+      case(bcd_in)
+         0: display = AM;
+         1: display = PM;
+      endcase
+   end  
+   else if(MODE == 1)
+      begin
+         case(bcd_in)
+         0: display = TWO;
+         endcase
+      end
+   else
+      begin
+         case(bcd_in)
+         0: display = t;
+         endcase
+      end
+endmodule

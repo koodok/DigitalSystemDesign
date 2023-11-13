@@ -1,0 +1,1330 @@
+|car
+CLOCK_50 => CLOCK_50.IN3
+KEY[0] => KEY[0].IN4
+KEY[1] => KEY[1].IN1
+KEY[2] => KEY[2].IN1
+KEY[3] => KEY[3].IN1
+SW[0] => SW[0].IN4
+SW[1] => SW[1].IN3
+SW[2] => SW[2].IN2
+SW[3] => SW[3].IN2
+SW[4] => SW[4].IN2
+SW[5] => SW[5].IN2
+SW[6] => SW[6].IN2
+SW[7] => SW[7].IN2
+SW[8] => SW[8].IN2
+SW[9] => SW[9].IN2
+SW[10] => ~NO_FANOUT~
+SW[11] => ~NO_FANOUT~
+SW[12] => ~NO_FANOUT~
+SW[13] => ~NO_FANOUT~
+SW[14] => ~NO_FANOUT~
+SW[15] => SW[15].IN1
+SW[16] => SW[16].IN2
+SW[17] => SW[17].IN2
+LEDG[0] <= signal_light:L2.light_out1
+LEDG[1] <= signal_light:L2.light_out2
+LEDG[2] <= <GND>
+LEDG[3] <= hazard_light:comb_9.light_out1
+LEDG[4] <= hazard_light:comb_9.light_out2
+LEDG[5] <= seatbelt:comb_10.light_out
+LEDG[6] <= signal_light:L1.light_out2
+LEDG[7] <= signal_light:L1.light_out1
+LEDG[8] <= <GND>
+LEDG[9] <= <GND>
+LEDG[10] <= <GND>
+LEDG[11] <= <GND>
+LEDG[12] <= <GND>
+LEDG[13] <= <GND>
+LEDG[14] <= <GND>
+LEDG[15] <= <GND>
+LEDG[16] <= <GND>
+LEDG[17] <= <GND>
+LEDR[0] <= link_light:SR1.out
+LEDR[1] <= link_light:SR2.out
+LEDR[2] <= link_light:SR3.out
+LEDR[3] <= link_light:SR4.out
+LEDR[4] <= link_light:SR5.out
+LEDR[5] <= link_light:SR6.out
+LEDR[6] <= link_light:SR7.out
+LEDR[7] <= link_light:SR8.out
+LEDR[8] <= link_light:SR9.out
+LEDR[9] <= link_light:SR10.out
+LEDR[10] <= <GND>
+LEDR[11] <= <GND>
+LEDR[12] <= <GND>
+LEDR[13] <= <GND>
+LEDR[14] <= <GND>
+LEDR[15] <= <GND>
+LEDR[16] <= link_light:SR17.out
+LEDR[17] <= link_light:SR18.out
+HEX0[0] <= unit_seven_seg:S0.display
+HEX0[1] <= unit_seven_seg:S0.display
+HEX0[2] <= unit_seven_seg:S0.display
+HEX0[3] <= unit_seven_seg:S0.display
+HEX0[4] <= unit_seven_seg:S0.display
+HEX0[5] <= unit_seven_seg:S0.display
+HEX0[6] <= unit_seven_seg:S0.display
+HEX1[0] <= seven_seg:S1.display
+HEX1[1] <= seven_seg:S1.display
+HEX1[2] <= seven_seg:S1.display
+HEX1[3] <= seven_seg:S1.display
+HEX1[4] <= seven_seg:S1.display
+HEX1[5] <= seven_seg:S1.display
+HEX1[6] <= seven_seg:S1.display
+HEX2[0] <= seven_seg:S2.display
+HEX2[1] <= seven_seg:S2.display
+HEX2[2] <= seven_seg:S2.display
+HEX2[3] <= seven_seg:S2.display
+HEX2[4] <= seven_seg:S2.display
+HEX2[5] <= seven_seg:S2.display
+HEX2[6] <= seven_seg:S2.display
+HEX3[0] <= seven_seg:S3.display
+HEX3[1] <= seven_seg:S3.display
+HEX3[2] <= seven_seg:S3.display
+HEX3[3] <= seven_seg:S3.display
+HEX3[4] <= seven_seg:S3.display
+HEX3[5] <= seven_seg:S3.display
+HEX3[6] <= seven_seg:S3.display
+HEX4[0] <= seven_seg:S5.display
+HEX4[1] <= seven_seg:S5.display
+HEX4[2] <= seven_seg:S5.display
+HEX4[3] <= seven_seg:S5.display
+HEX4[4] <= seven_seg:S5.display
+HEX4[5] <= seven_seg:S5.display
+HEX4[6] <= seven_seg:S5.display
+HEX5[0] <= seven_seg:S6.display
+HEX5[1] <= seven_seg:S6.display
+HEX5[2] <= seven_seg:S6.display
+HEX5[3] <= seven_seg:S6.display
+HEX5[4] <= seven_seg:S6.display
+HEX5[5] <= seven_seg:S6.display
+HEX5[6] <= seven_seg:S6.display
+HEX6[0] <= seven_seg_decoder_mode:S8.display
+HEX6[1] <= seven_seg_decoder_mode:S8.display
+HEX6[2] <= seven_seg_decoder_mode:S8.display
+HEX6[3] <= seven_seg_decoder_mode:S8.display
+HEX6[4] <= seven_seg_decoder_mode:S8.display
+HEX6[5] <= seven_seg_decoder_mode:S8.display
+HEX6[6] <= seven_seg_decoder_mode:S8.display
+HEX7[0] <= mode_seven_seg:comb_8.display
+HEX7[1] <= mode_seven_seg:comb_8.display
+HEX7[2] <= mode_seven_seg:comb_8.display
+HEX7[3] <= mode_seven_seg:comb_8.display
+HEX7[4] <= mode_seven_seg:comb_8.display
+HEX7[5] <= mode_seven_seg:comb_8.display
+HEX7[6] <= mode_seven_seg:comb_8.display
+
+
+|car|clock_gen:U3
+RST => RST.IN2
+CLK_50Mhz => CLK_50Mhz.IN1
+CLK_1Hz <= counter:U2.carry_out
+
+
+|car|clock_gen:U3|counter:U1
+clk => carry_out~reg0.CLK
+clk => count_out[0]~reg0.CLK
+clk => count_out[1]~reg0.CLK
+clk => count_out[2]~reg0.CLK
+clk => count_out[3]~reg0.CLK
+clk => count_out[4]~reg0.CLK
+clk => count_out[5]~reg0.CLK
+clk => count_out[6]~reg0.CLK
+clk => count_out[7]~reg0.CLK
+clk => count_out[8]~reg0.CLK
+clk => count_out[9]~reg0.CLK
+clk => count_out[10]~reg0.CLK
+clk => count_out[11]~reg0.CLK
+rst => carry_out~reg0.ACLR
+rst => count_out[0]~reg0.ACLR
+rst => count_out[1]~reg0.ACLR
+rst => count_out[2]~reg0.ACLR
+rst => count_out[3]~reg0.ACLR
+rst => count_out[4]~reg0.ACLR
+rst => count_out[5]~reg0.ACLR
+rst => count_out[6]~reg0.ACLR
+rst => count_out[7]~reg0.ACLR
+rst => count_out[8]~reg0.ACLR
+rst => count_out[9]~reg0.ACLR
+rst => count_out[10]~reg0.ACLR
+rst => count_out[11]~reg0.ACLR
+count_out[0] <= count_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[1] <= count_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[2] <= count_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[3] <= count_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[4] <= count_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[5] <= count_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[6] <= count_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[7] <= count_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[8] <= count_out[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[9] <= count_out[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[10] <= count_out[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[11] <= count_out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= carry_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|clock_gen:U3|counter:U2
+clk => carry_out~reg0.CLK
+clk => count_out[0]~reg0.CLK
+rst => carry_out~reg0.ACLR
+rst => count_out[0]~reg0.ACLR
+count_out[0] <= count_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= carry_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|counter_distance:CFORD
+clk => carry_out~reg0.CLK
+clk => count_out[0]~reg0.CLK
+clk => count_out[1]~reg0.CLK
+clk => count_out[2]~reg0.CLK
+clk => count_out[3]~reg0.CLK
+clk => count_out[4]~reg0.CLK
+clk => count_out[5]~reg0.CLK
+clk => count_out[6]~reg0.CLK
+clk => count_out[7]~reg0.CLK
+clk => count_out[8]~reg0.CLK
+clk => count_out[9]~reg0.CLK
+clk => count_out[10]~reg0.CLK
+clk => count_out[11]~reg0.CLK
+clk => count_out[12]~reg0.CLK
+clk => count_out[13]~reg0.CLK
+clk => count_out[14]~reg0.CLK
+clk => count_out[15]~reg0.CLK
+velocity[0] => WideOr0.IN0
+velocity[0] => Add0.IN16
+velocity[1] => WideOr0.IN1
+velocity[1] => Add0.IN15
+velocity[2] => WideOr0.IN2
+velocity[2] => Add0.IN14
+velocity[3] => WideOr0.IN3
+velocity[3] => Add0.IN13
+velocity[4] => WideOr0.IN4
+velocity[4] => Add0.IN12
+velocity[5] => WideOr0.IN5
+velocity[5] => Add0.IN11
+velocity[6] => WideOr0.IN6
+velocity[6] => Add0.IN10
+count_out[0] <= count_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[1] <= count_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[2] <= count_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[3] <= count_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[4] <= count_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[5] <= count_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[6] <= count_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[7] <= count_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[8] <= count_out[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[9] <= count_out[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[10] <= count_out[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[11] <= count_out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[12] <= count_out[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[13] <= count_out[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[14] <= count_out[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[15] <= count_out[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= carry_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|counter:C5
+clk => carry_out~reg0.CLK
+clk => count_out[0]~reg0.CLK
+clk => count_out[1]~reg0.CLK
+clk => count_out[2]~reg0.CLK
+clk => count_out[3]~reg0.CLK
+rst => carry_out~reg0.ACLR
+rst => count_out[0]~reg0.ACLR
+rst => count_out[1]~reg0.ACLR
+rst => count_out[2]~reg0.ACLR
+rst => count_out[3]~reg0.ACLR
+count_out[0] <= count_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[1] <= count_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[2] <= count_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[3] <= count_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= carry_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|counter:C6
+clk => carry_out~reg0.CLK
+clk => count_out[0]~reg0.CLK
+clk => count_out[1]~reg0.CLK
+clk => count_out[2]~reg0.CLK
+clk => count_out[3]~reg0.CLK
+rst => carry_out~reg0.ACLR
+rst => count_out[0]~reg0.ACLR
+rst => count_out[1]~reg0.ACLR
+rst => count_out[2]~reg0.ACLR
+rst => count_out[3]~reg0.ACLR
+count_out[0] <= count_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[1] <= count_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[2] <= count_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[3] <= count_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= carry_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|counter:C7
+clk => carry_out~reg0.CLK
+clk => count_out[0]~reg0.CLK
+clk => count_out[1]~reg0.CLK
+clk => count_out[2]~reg0.CLK
+clk => count_out[3]~reg0.CLK
+rst => carry_out~reg0.ACLR
+rst => count_out[0]~reg0.ACLR
+rst => count_out[1]~reg0.ACLR
+rst => count_out[2]~reg0.ACLR
+rst => count_out[3]~reg0.ACLR
+count_out[0] <= count_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[1] <= count_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[2] <= count_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[3] <= count_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= carry_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|counter:C1
+clk => carry_out~reg0.CLK
+clk => count_out[0]~reg0.CLK
+clk => count_out[1]~reg0.CLK
+clk => count_out[2]~reg0.CLK
+clk => count_out[3]~reg0.CLK
+rst => carry_out~reg0.ACLR
+rst => count_out[0]~reg0.ACLR
+rst => count_out[1]~reg0.ACLR
+rst => count_out[2]~reg0.ACLR
+rst => count_out[3]~reg0.ACLR
+count_out[0] <= count_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[1] <= count_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[2] <= count_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[3] <= count_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= carry_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|counter:C2
+clk => carry_out~reg0.CLK
+clk => count_out[0]~reg0.CLK
+clk => count_out[1]~reg0.CLK
+clk => count_out[2]~reg0.CLK
+clk => count_out[3]~reg0.CLK
+rst => carry_out~reg0.ACLR
+rst => count_out[0]~reg0.ACLR
+rst => count_out[1]~reg0.ACLR
+rst => count_out[2]~reg0.ACLR
+rst => count_out[3]~reg0.ACLR
+count_out[0] <= count_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[1] <= count_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[2] <= count_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[3] <= count_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= carry_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|counter:C3
+clk => carry_out~reg0.CLK
+clk => count_out[0]~reg0.CLK
+clk => count_out[1]~reg0.CLK
+clk => count_out[2]~reg0.CLK
+clk => count_out[3]~reg0.CLK
+rst => carry_out~reg0.ACLR
+rst => count_out[0]~reg0.ACLR
+rst => count_out[1]~reg0.ACLR
+rst => count_out[2]~reg0.ACLR
+rst => count_out[3]~reg0.ACLR
+count_out[0] <= count_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[1] <= count_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[2] <= count_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[3] <= count_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= carry_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|MUX_2to1:M1
+sel => Decoder0.IN0
+a[0] => out.DATAA
+b[0] => out.DATAB
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|MUX_2to1:M2
+sel => Decoder0.IN0
+a[0] => out.DATAA
+a[1] => out.DATAA
+a[2] => out.DATAA
+a[3] => out.DATAA
+b[0] => out.DATAB
+b[1] => out.DATAB
+b[2] => out.DATAB
+b[3] => out.DATAB
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= <GND>
+out[5] <= <GND>
+out[6] <= <GND>
+out[7] <= <GND>
+
+
+|car|MUX_2to1:M3
+sel => Decoder0.IN0
+a[0] => out.DATAA
+a[1] => out.DATAA
+a[2] => out.DATAA
+a[3] => out.DATAA
+b[0] => out.DATAB
+b[1] => out.DATAB
+b[2] => out.DATAB
+b[3] => out.DATAB
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= <GND>
+out[5] <= <GND>
+out[6] <= <GND>
+out[7] <= <GND>
+
+
+|car|MUX_2to1:M4
+sel => Decoder0.IN0
+a[0] => out.DATAA
+a[1] => out.DATAA
+a[2] => out.DATAA
+a[3] => out.DATAA
+b[0] => out.DATAB
+b[1] => out.DATAB
+b[2] => out.DATAB
+b[3] => out.DATAB
+out[0] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[1] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[2] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[3] <= out.DB_MAX_OUTPUT_PORT_TYPE
+out[4] <= <GND>
+out[5] <= <GND>
+out[6] <= <GND>
+out[7] <= <GND>
+
+
+|car|unit_seven_seg:S0
+display[0] <= <GND>
+display[1] <= <VCC>
+display[2] <= <GND>
+display[3] <= <VCC>
+display[4] <= <GND>
+display[5] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+in => Decoder0.IN0
+
+
+|car|seven_seg:S1
+display[0] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+bcd_in[0] => Decoder0.IN3
+bcd_in[1] => Decoder0.IN2
+bcd_in[2] => Decoder0.IN1
+bcd_in[3] => Decoder0.IN0
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+
+
+|car|seven_seg:S2
+display[0] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+bcd_in[0] => Decoder0.IN3
+bcd_in[1] => Decoder0.IN2
+bcd_in[2] => Decoder0.IN1
+bcd_in[3] => Decoder0.IN0
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+
+
+|car|seven_seg:S3
+display[0] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+bcd_in[0] => Decoder0.IN3
+bcd_in[1] => Decoder0.IN2
+bcd_in[2] => Decoder0.IN1
+bcd_in[3] => Decoder0.IN0
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+
+
+|car|clock_gen:U2
+RST => RST.IN2
+CLK_50Mhz => CLK_50Mhz.IN1
+CLK_1Hz <= counter:U2.carry_out
+
+
+|car|clock_gen:U2|counter:U1
+clk => carry_out~reg0.CLK
+clk => count_out[0]~reg0.CLK
+clk => count_out[1]~reg0.CLK
+clk => count_out[2]~reg0.CLK
+clk => count_out[3]~reg0.CLK
+clk => count_out[4]~reg0.CLK
+clk => count_out[5]~reg0.CLK
+clk => count_out[6]~reg0.CLK
+clk => count_out[7]~reg0.CLK
+clk => count_out[8]~reg0.CLK
+clk => count_out[9]~reg0.CLK
+clk => count_out[10]~reg0.CLK
+clk => count_out[11]~reg0.CLK
+clk => count_out[12]~reg0.CLK
+clk => count_out[13]~reg0.CLK
+clk => count_out[14]~reg0.CLK
+clk => count_out[15]~reg0.CLK
+clk => count_out[16]~reg0.CLK
+clk => count_out[17]~reg0.CLK
+clk => count_out[18]~reg0.CLK
+clk => count_out[19]~reg0.CLK
+clk => count_out[20]~reg0.CLK
+clk => count_out[21]~reg0.CLK
+rst => carry_out~reg0.ACLR
+rst => count_out[0]~reg0.ACLR
+rst => count_out[1]~reg0.ACLR
+rst => count_out[2]~reg0.ACLR
+rst => count_out[3]~reg0.ACLR
+rst => count_out[4]~reg0.ACLR
+rst => count_out[5]~reg0.ACLR
+rst => count_out[6]~reg0.ACLR
+rst => count_out[7]~reg0.ACLR
+rst => count_out[8]~reg0.ACLR
+rst => count_out[9]~reg0.ACLR
+rst => count_out[10]~reg0.ACLR
+rst => count_out[11]~reg0.ACLR
+rst => count_out[12]~reg0.ACLR
+rst => count_out[13]~reg0.ACLR
+rst => count_out[14]~reg0.ACLR
+rst => count_out[15]~reg0.ACLR
+rst => count_out[16]~reg0.ACLR
+rst => count_out[17]~reg0.ACLR
+rst => count_out[18]~reg0.ACLR
+rst => count_out[19]~reg0.ACLR
+rst => count_out[20]~reg0.ACLR
+rst => count_out[21]~reg0.ACLR
+count_out[0] <= count_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[1] <= count_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[2] <= count_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[3] <= count_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[4] <= count_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[5] <= count_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[6] <= count_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[7] <= count_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[8] <= count_out[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[9] <= count_out[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[10] <= count_out[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[11] <= count_out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[12] <= count_out[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[13] <= count_out[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[14] <= count_out[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[15] <= count_out[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[16] <= count_out[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[17] <= count_out[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[18] <= count_out[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[19] <= count_out[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[20] <= count_out[20]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[21] <= count_out[21]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= carry_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|clock_gen:U2|counter:U2
+clk => carry_out~reg0.CLK
+clk => count_out[0]~reg0.CLK
+rst => carry_out~reg0.ACLR
+rst => count_out[0]~reg0.ACLR
+count_out[0] <= count_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= carry_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|accel_and_brake:AC1
+clk => count_out[0]~reg0.CLK
+clk => count_out[1]~reg0.CLK
+clk => count_out[2]~reg0.CLK
+clk => count_out[3]~reg0.CLK
+clk => count_out[4]~reg0.CLK
+clk => count_out[5]~reg0.CLK
+clk => count_out[6]~reg0.CLK
+rst => count_out.OUTPUTSELECT
+rst => count_out.OUTPUTSELECT
+rst => count_out.OUTPUTSELECT
+rst => count_out.OUTPUTSELECT
+rst => count_out.OUTPUTSELECT
+rst => count_out.OUTPUTSELECT
+rst => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+accel => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+brake => count_out.OUTPUTSELECT
+gear[0] => Equal0.IN1
+gear[0] => Equal1.IN31
+gear[0] => Equal2.IN1
+gear[0] => Equal3.IN31
+gear[0] => Equal4.IN0
+gear[0] => Equal5.IN31
+gear[1] => Equal0.IN31
+gear[1] => Equal1.IN30
+gear[1] => Equal2.IN0
+gear[1] => Equal3.IN0
+gear[1] => Equal4.IN31
+gear[1] => Equal5.IN1
+gear[2] => Equal0.IN0
+gear[2] => Equal1.IN0
+gear[2] => Equal2.IN31
+gear[2] => Equal3.IN30
+gear[2] => Equal4.IN30
+gear[2] => Equal5.IN0
+key2 => count_out.OUTPUTSELECT
+key2 => count_out.OUTPUTSELECT
+key2 => count_out.OUTPUTSELECT
+key2 => count_out.OUTPUTSELECT
+key2 => count_out.OUTPUTSELECT
+key2 => count_out.OUTPUTSELECT
+key2 => count_out.OUTPUTSELECT
+count_out[0] <= count_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[1] <= count_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[2] <= count_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[3] <= count_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[4] <= count_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[5] <= count_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[6] <= count_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|binary_to_bcd:B1
+binary_in[0] => LessThan0.IN16
+binary_in[0] => LessThan1.IN16
+binary_in[0] => LessThan2.IN16
+binary_in[0] => LessThan3.IN16
+binary_in[0] => LessThan4.IN16
+binary_in[0] => LessThan5.IN16
+binary_in[0] => LessThan6.IN16
+binary_in[0] => LessThan7.IN16
+binary_in[0] => LessThan8.IN16
+binary_in[0] => bcd_out[0].DATAIN
+binary_in[1] => LessThan0.IN15
+binary_in[1] => LessThan1.IN15
+binary_in[1] => Add0.IN14
+binary_in[1] => LessThan2.IN15
+binary_in[1] => LessThan3.IN15
+binary_in[1] => Add2.IN14
+binary_in[1] => LessThan4.IN15
+binary_in[1] => LessThan5.IN15
+binary_in[1] => Add4.IN14
+binary_in[1] => LessThan6.IN15
+binary_in[1] => LessThan7.IN15
+binary_in[1] => Add6.IN14
+binary_in[1] => LessThan8.IN15
+binary_in[1] => Add8.IN14
+binary_in[1] => bcd_out.DATAB
+binary_in[1] => bcd_out.DATAB
+binary_in[1] => bcd_out.DATAB
+binary_in[1] => bcd_out.DATAB
+binary_in[1] => bcd_out.DATAB
+binary_in[2] => LessThan0.IN14
+binary_in[2] => LessThan1.IN14
+binary_in[2] => Add0.IN13
+binary_in[2] => LessThan2.IN14
+binary_in[2] => Add1.IN12
+binary_in[2] => LessThan3.IN14
+binary_in[2] => Add2.IN13
+binary_in[2] => LessThan4.IN14
+binary_in[2] => LessThan5.IN14
+binary_in[2] => Add4.IN13
+binary_in[2] => LessThan6.IN14
+binary_in[2] => Add5.IN12
+binary_in[2] => LessThan7.IN14
+binary_in[2] => Add6.IN13
+binary_in[2] => LessThan8.IN14
+binary_in[2] => Add8.IN13
+binary_in[2] => bcd_out.DATAB
+binary_in[2] => bcd_out.DATAB
+binary_in[2] => bcd_out.DATAB
+binary_in[3] => LessThan0.IN13
+binary_in[3] => LessThan1.IN13
+binary_in[3] => Add0.IN12
+binary_in[3] => LessThan2.IN13
+binary_in[3] => Add1.IN11
+binary_in[3] => LessThan3.IN13
+binary_in[3] => Add2.IN12
+binary_in[3] => LessThan4.IN13
+binary_in[3] => Add3.IN10
+binary_in[3] => LessThan5.IN13
+binary_in[3] => Add4.IN12
+binary_in[3] => LessThan6.IN13
+binary_in[3] => Add5.IN11
+binary_in[3] => LessThan7.IN13
+binary_in[3] => Add6.IN12
+binary_in[3] => LessThan8.IN13
+binary_in[3] => Add8.IN12
+binary_in[3] => bcd_out.DATAB
+binary_in[3] => bcd_out.DATAB
+binary_in[4] => LessThan0.IN12
+binary_in[4] => LessThan1.IN12
+binary_in[4] => Add0.IN11
+binary_in[4] => LessThan2.IN12
+binary_in[4] => Add1.IN10
+binary_in[4] => LessThan3.IN12
+binary_in[4] => Add2.IN11
+binary_in[4] => LessThan4.IN12
+binary_in[4] => Add3.IN9
+binary_in[4] => LessThan5.IN12
+binary_in[4] => Add4.IN11
+binary_in[4] => LessThan6.IN12
+binary_in[4] => Add5.IN10
+binary_in[4] => LessThan7.IN12
+binary_in[4] => Add6.IN11
+binary_in[4] => LessThan8.IN12
+binary_in[4] => Add7.IN8
+binary_in[4] => Add8.IN11
+binary_in[4] => bcd_out.DATAB
+binary_in[5] => LessThan0.IN11
+binary_in[5] => LessThan1.IN11
+binary_in[5] => Add0.IN10
+binary_in[5] => LessThan2.IN11
+binary_in[5] => Add1.IN9
+binary_in[5] => LessThan3.IN11
+binary_in[5] => Add2.IN10
+binary_in[5] => LessThan4.IN11
+binary_in[5] => Add3.IN8
+binary_in[5] => LessThan5.IN11
+binary_in[5] => Add4.IN10
+binary_in[5] => LessThan6.IN11
+binary_in[5] => Add5.IN9
+binary_in[5] => LessThan7.IN11
+binary_in[5] => Add6.IN10
+binary_in[5] => LessThan8.IN11
+binary_in[5] => Add7.IN7
+binary_in[5] => Add8.IN10
+binary_in[5] => bcd_out.DATAB
+binary_in[6] => LessThan0.IN10
+binary_in[6] => LessThan1.IN10
+binary_in[6] => Add0.IN9
+binary_in[6] => LessThan2.IN10
+binary_in[6] => Add1.IN8
+binary_in[6] => LessThan3.IN10
+binary_in[6] => Add2.IN9
+binary_in[6] => LessThan4.IN10
+binary_in[6] => Add3.IN7
+binary_in[6] => LessThan5.IN10
+binary_in[6] => Add4.IN9
+binary_in[6] => LessThan6.IN10
+binary_in[6] => Add5.IN8
+binary_in[6] => LessThan7.IN10
+binary_in[6] => Add6.IN9
+binary_in[6] => LessThan8.IN10
+binary_in[6] => Add7.IN6
+binary_in[6] => Add8.IN9
+binary_in[6] => bcd_out.DATAB
+binary_in[7] => LessThan0.IN9
+binary_in[7] => LessThan1.IN9
+binary_in[7] => Add0.IN8
+binary_in[7] => LessThan2.IN9
+binary_in[7] => Add1.IN7
+binary_in[7] => LessThan3.IN9
+binary_in[7] => Add2.IN8
+binary_in[7] => LessThan4.IN9
+binary_in[7] => Add3.IN6
+binary_in[7] => LessThan5.IN9
+binary_in[7] => Add4.IN8
+binary_in[7] => LessThan6.IN9
+binary_in[7] => Add5.IN7
+binary_in[7] => LessThan7.IN9
+binary_in[7] => Add6.IN8
+binary_in[7] => LessThan8.IN9
+binary_in[7] => Add7.IN5
+binary_in[7] => Add8.IN8
+binary_in[7] => bcd_out.DATAB
+bcd_out[0] <= binary_in[0].DB_MAX_OUTPUT_PORT_TYPE
+bcd_out[1] <= bcd_out.DB_MAX_OUTPUT_PORT_TYPE
+bcd_out[2] <= bcd_out.DB_MAX_OUTPUT_PORT_TYPE
+bcd_out[3] <= bcd_out.DB_MAX_OUTPUT_PORT_TYPE
+bcd_out[4] <= bcd_out.DB_MAX_OUTPUT_PORT_TYPE
+bcd_out[5] <= bcd_out.DB_MAX_OUTPUT_PORT_TYPE
+bcd_out[6] <= bcd_out.DB_MAX_OUTPUT_PORT_TYPE
+bcd_out[7] <= bcd_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|seven_seg:S5
+display[0] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+bcd_in[0] => Decoder0.IN3
+bcd_in[1] => Decoder0.IN2
+bcd_in[2] => Decoder0.IN1
+bcd_in[3] => Decoder0.IN0
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+
+
+|car|seven_seg:S6
+display[0] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+bcd_in[0] => Decoder0.IN3
+bcd_in[1] => Decoder0.IN2
+bcd_in[2] => Decoder0.IN1
+bcd_in[3] => Decoder0.IN0
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+
+
+|car|gear_set:G1
+rst => gear[2]$latch.ACLR
+rst => gear[1]$latch.ACLR
+rst => gear[0]$latch.ACLR
+clutch => gear[2].IN1
+clutch => gear[2].IN1
+clutch => gear[2].DATAB
+clutch => gear[2].IN1
+clutch => gear[2].DATAB
+clutch => gear[2].IN1
+clutch => gear[2].DATAB
+clutch => gear[2].DATAB
+clutch => gear[2].DATAB
+reverse => gear[2].IN0
+reverse => gear[2].IN0
+reverse => gear[2].IN0
+reverse => gear[2].IN0
+reverse => gear[2].DATAB
+reverse => gear[2].DATAB
+reverse => gear[2].DATAB
+reverse => gear[1].DATAB
+reverse => gear.OUTPUTSELECT
+reverse => gear.OUTPUTSELECT
+reverse => gear[2].DATAB
+reverse => gear[2].DATAB
+reverse => gear[0].OUTPUTSELECT
+reverse => gear[1].DATAA
+reverse => gear.OUTPUTSELECT
+reverse => gear.OUTPUTSELECT
+reverse => gear.OUTPUTSELECT
+reverse => gear.OUTPUTSELECT
+reverse => gear.OUTPUTSELECT
+reverse => gear[0].DATAA
+reverse => gear[0].DATAB
+gear_1 => gear.DATAA
+gear_2 => gear[2].IN1
+gear_2 => gear.DATAB
+gear_2 => gear.DATAB
+gear_3 => gear[2].IN1
+gear_3 => gear.DATAA
+gear_4 => gear[2].IN1
+gear_4 => gear.DATAB
+gear_4 => gear.DATAB
+gear_4 => gear.DATAB
+gear_5 => gear[2].IN1
+gear_5 => gear[0].DATAA
+velocity_in[0] => LessThan0.IN16
+velocity_in[0] => LessThan1.IN16
+velocity_in[0] => LessThan2.IN16
+velocity_in[0] => LessThan3.IN16
+velocity_in[0] => LessThan4.IN16
+velocity_in[0] => LessThan5.IN16
+velocity_in[0] => LessThan6.IN16
+velocity_in[0] => LessThan7.IN16
+velocity_in[0] => LessThan8.IN16
+velocity_in[0] => LessThan9.IN16
+velocity_in[0] => LessThan10.IN16
+velocity_in[0] => LessThan11.IN16
+velocity_in[0] => LessThan12.IN16
+velocity_in[0] => LessThan13.IN16
+velocity_in[0] => LessThan14.IN16
+velocity_in[0] => LessThan15.IN16
+velocity_in[0] => LessThan16.IN16
+velocity_in[1] => LessThan0.IN15
+velocity_in[1] => LessThan1.IN15
+velocity_in[1] => LessThan2.IN15
+velocity_in[1] => LessThan3.IN15
+velocity_in[1] => LessThan4.IN15
+velocity_in[1] => LessThan5.IN15
+velocity_in[1] => LessThan6.IN15
+velocity_in[1] => LessThan7.IN15
+velocity_in[1] => LessThan8.IN15
+velocity_in[1] => LessThan9.IN15
+velocity_in[1] => LessThan10.IN15
+velocity_in[1] => LessThan11.IN15
+velocity_in[1] => LessThan12.IN15
+velocity_in[1] => LessThan13.IN15
+velocity_in[1] => LessThan14.IN15
+velocity_in[1] => LessThan15.IN15
+velocity_in[1] => LessThan16.IN15
+velocity_in[2] => LessThan0.IN14
+velocity_in[2] => LessThan1.IN14
+velocity_in[2] => LessThan2.IN14
+velocity_in[2] => LessThan3.IN14
+velocity_in[2] => LessThan4.IN14
+velocity_in[2] => LessThan5.IN14
+velocity_in[2] => LessThan6.IN14
+velocity_in[2] => LessThan7.IN14
+velocity_in[2] => LessThan8.IN14
+velocity_in[2] => LessThan9.IN14
+velocity_in[2] => LessThan10.IN14
+velocity_in[2] => LessThan11.IN14
+velocity_in[2] => LessThan12.IN14
+velocity_in[2] => LessThan13.IN14
+velocity_in[2] => LessThan14.IN14
+velocity_in[2] => LessThan15.IN14
+velocity_in[2] => LessThan16.IN14
+velocity_in[3] => LessThan0.IN13
+velocity_in[3] => LessThan1.IN13
+velocity_in[3] => LessThan2.IN13
+velocity_in[3] => LessThan3.IN13
+velocity_in[3] => LessThan4.IN13
+velocity_in[3] => LessThan5.IN13
+velocity_in[3] => LessThan6.IN13
+velocity_in[3] => LessThan7.IN13
+velocity_in[3] => LessThan8.IN13
+velocity_in[3] => LessThan9.IN13
+velocity_in[3] => LessThan10.IN13
+velocity_in[3] => LessThan11.IN13
+velocity_in[3] => LessThan12.IN13
+velocity_in[3] => LessThan13.IN13
+velocity_in[3] => LessThan14.IN13
+velocity_in[3] => LessThan15.IN13
+velocity_in[3] => LessThan16.IN13
+velocity_in[4] => LessThan0.IN12
+velocity_in[4] => LessThan1.IN12
+velocity_in[4] => LessThan2.IN12
+velocity_in[4] => LessThan3.IN12
+velocity_in[4] => LessThan4.IN12
+velocity_in[4] => LessThan5.IN12
+velocity_in[4] => LessThan6.IN12
+velocity_in[4] => LessThan7.IN12
+velocity_in[4] => LessThan8.IN12
+velocity_in[4] => LessThan9.IN12
+velocity_in[4] => LessThan10.IN12
+velocity_in[4] => LessThan11.IN12
+velocity_in[4] => LessThan12.IN12
+velocity_in[4] => LessThan13.IN12
+velocity_in[4] => LessThan14.IN12
+velocity_in[4] => LessThan15.IN12
+velocity_in[4] => LessThan16.IN12
+velocity_in[5] => LessThan0.IN11
+velocity_in[5] => LessThan1.IN11
+velocity_in[5] => LessThan2.IN11
+velocity_in[5] => LessThan3.IN11
+velocity_in[5] => LessThan4.IN11
+velocity_in[5] => LessThan5.IN11
+velocity_in[5] => LessThan6.IN11
+velocity_in[5] => LessThan7.IN11
+velocity_in[5] => LessThan8.IN11
+velocity_in[5] => LessThan9.IN11
+velocity_in[5] => LessThan10.IN11
+velocity_in[5] => LessThan11.IN11
+velocity_in[5] => LessThan12.IN11
+velocity_in[5] => LessThan13.IN11
+velocity_in[5] => LessThan14.IN11
+velocity_in[5] => LessThan15.IN11
+velocity_in[5] => LessThan16.IN11
+velocity_in[6] => LessThan0.IN10
+velocity_in[6] => LessThan1.IN10
+velocity_in[6] => LessThan2.IN10
+velocity_in[6] => LessThan3.IN10
+velocity_in[6] => LessThan4.IN10
+velocity_in[6] => LessThan5.IN10
+velocity_in[6] => LessThan6.IN10
+velocity_in[6] => LessThan7.IN10
+velocity_in[6] => LessThan8.IN10
+velocity_in[6] => LessThan9.IN10
+velocity_in[6] => LessThan10.IN10
+velocity_in[6] => LessThan11.IN10
+velocity_in[6] => LessThan12.IN10
+velocity_in[6] => LessThan13.IN10
+velocity_in[6] => LessThan14.IN10
+velocity_in[6] => LessThan15.IN10
+velocity_in[6] => LessThan16.IN10
+velocity_in[7] => LessThan0.IN9
+velocity_in[7] => LessThan1.IN9
+velocity_in[7] => LessThan2.IN9
+velocity_in[7] => LessThan3.IN9
+velocity_in[7] => LessThan4.IN9
+velocity_in[7] => LessThan5.IN9
+velocity_in[7] => LessThan6.IN9
+velocity_in[7] => LessThan7.IN9
+velocity_in[7] => LessThan8.IN9
+velocity_in[7] => LessThan9.IN9
+velocity_in[7] => LessThan10.IN9
+velocity_in[7] => LessThan11.IN9
+velocity_in[7] => LessThan12.IN9
+velocity_in[7] => LessThan13.IN9
+velocity_in[7] => LessThan14.IN9
+velocity_in[7] => LessThan15.IN9
+velocity_in[7] => LessThan16.IN9
+gear[0] <= gear[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+gear[1] <= gear[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+gear[2] <= gear[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|seven_seg_decoder_mode:S8
+display[0] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+bcd_in[0] => Decoder0.IN3
+bcd_in[1] => Decoder0.IN2
+bcd_in[1] => Decoder1.IN2
+bcd_in[2] => Decoder0.IN1
+bcd_in[2] => Decoder1.IN1
+bcd_in[3] => Decoder0.IN0
+bcd_in[3] => Decoder1.IN0
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+
+
+|car|gear_to_mode:comb_7
+GEAR[0] => Mux0.IN10
+GEAR[0] => Mux1.IN10
+GEAR[0] => Mux2.IN10
+GEAR[1] => Mux0.IN9
+GEAR[1] => Mux1.IN9
+GEAR[1] => Mux2.IN9
+GEAR[2] => Mux0.IN8
+GEAR[2] => Mux1.IN8
+GEAR[2] => Mux2.IN8
+MODE[0] <= MODE[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
+MODE[1] <= MODE[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|mode_seven_seg:comb_8
+display[0] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[1] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[2] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[3] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[4] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[5] <= display.DB_MAX_OUTPUT_PORT_TYPE
+display[6] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+in[0] => Decoder0.IN1
+in[0] => display.DATAA
+in[1] => Decoder0.IN0
+in[1] => display.DATAB
+in[1] => display.DATAB
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+leading_zero => display.OUTPUTSELECT
+
+
+|car|clock_gen:U4
+RST => RST.IN2
+CLK_50Mhz => CLK_50Mhz.IN1
+CLK_1Hz <= counter:U2.carry_out
+
+
+|car|clock_gen:U4|counter:U1
+clk => carry_out~reg0.CLK
+clk => count_out[0]~reg0.CLK
+clk => count_out[1]~reg0.CLK
+clk => count_out[2]~reg0.CLK
+clk => count_out[3]~reg0.CLK
+clk => count_out[4]~reg0.CLK
+clk => count_out[5]~reg0.CLK
+clk => count_out[6]~reg0.CLK
+clk => count_out[7]~reg0.CLK
+clk => count_out[8]~reg0.CLK
+clk => count_out[9]~reg0.CLK
+clk => count_out[10]~reg0.CLK
+clk => count_out[11]~reg0.CLK
+clk => count_out[12]~reg0.CLK
+clk => count_out[13]~reg0.CLK
+clk => count_out[14]~reg0.CLK
+clk => count_out[15]~reg0.CLK
+clk => count_out[16]~reg0.CLK
+clk => count_out[17]~reg0.CLK
+clk => count_out[18]~reg0.CLK
+clk => count_out[19]~reg0.CLK
+clk => count_out[20]~reg0.CLK
+clk => count_out[21]~reg0.CLK
+clk => count_out[22]~reg0.CLK
+clk => count_out[23]~reg0.CLK
+clk => count_out[24]~reg0.CLK
+rst => carry_out~reg0.ACLR
+rst => count_out[0]~reg0.ACLR
+rst => count_out[1]~reg0.ACLR
+rst => count_out[2]~reg0.ACLR
+rst => count_out[3]~reg0.ACLR
+rst => count_out[4]~reg0.ACLR
+rst => count_out[5]~reg0.ACLR
+rst => count_out[6]~reg0.ACLR
+rst => count_out[7]~reg0.ACLR
+rst => count_out[8]~reg0.ACLR
+rst => count_out[9]~reg0.ACLR
+rst => count_out[10]~reg0.ACLR
+rst => count_out[11]~reg0.ACLR
+rst => count_out[12]~reg0.ACLR
+rst => count_out[13]~reg0.ACLR
+rst => count_out[14]~reg0.ACLR
+rst => count_out[15]~reg0.ACLR
+rst => count_out[16]~reg0.ACLR
+rst => count_out[17]~reg0.ACLR
+rst => count_out[18]~reg0.ACLR
+rst => count_out[19]~reg0.ACLR
+rst => count_out[20]~reg0.ACLR
+rst => count_out[21]~reg0.ACLR
+rst => count_out[22]~reg0.ACLR
+rst => count_out[23]~reg0.ACLR
+rst => count_out[24]~reg0.ACLR
+count_out[0] <= count_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[1] <= count_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[2] <= count_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[3] <= count_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[4] <= count_out[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[5] <= count_out[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[6] <= count_out[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[7] <= count_out[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[8] <= count_out[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[9] <= count_out[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[10] <= count_out[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[11] <= count_out[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[12] <= count_out[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[13] <= count_out[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[14] <= count_out[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[15] <= count_out[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[16] <= count_out[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[17] <= count_out[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[18] <= count_out[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[19] <= count_out[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[20] <= count_out[20]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[21] <= count_out[21]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[22] <= count_out[22]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[23] <= count_out[23]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+count_out[24] <= count_out[24]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= carry_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|clock_gen:U4|counter:U2
+clk => carry_out~reg0.CLK
+clk => count_out[0]~reg0.CLK
+rst => carry_out~reg0.ACLR
+rst => count_out[0]~reg0.ACLR
+count_out[0] <= count_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+carry_out <= carry_out~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|signal_light:L1
+clk_in => light_out1.DATAB
+clk_in => light_out2.DATAB
+rst => light_out1.OUTPUTSELECT
+rst => light_out2.OUTPUTSELECT
+light_out1 <= light_out1.DB_MAX_OUTPUT_PORT_TYPE
+light_out2 <= light_out2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|signal_light:L2
+clk_in => light_out1.DATAB
+clk_in => light_out2.DATAB
+rst => light_out1.OUTPUTSELECT
+rst => light_out2.OUTPUTSELECT
+light_out1 <= light_out1.DB_MAX_OUTPUT_PORT_TYPE
+light_out2 <= light_out2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|hazard_light:comb_9
+rst => light_out1.DATAIN
+rst => light_out2.DATAIN
+light_out1 <= rst.DB_MAX_OUTPUT_PORT_TYPE
+light_out2 <= rst.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|seatbelt:comb_10
+clk_in => light_out.DATAA
+rst => light_out.OUTPUTSELECT
+light_out <= light_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|link_light:SR1
+clk => ~NO_FANOUT~
+in => out.DATAIN
+out <= in.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|link_light:SR2
+clk => ~NO_FANOUT~
+in => out.DATAIN
+out <= in.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|link_light:SR3
+clk => ~NO_FANOUT~
+in => out.DATAIN
+out <= in.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|link_light:SR4
+clk => ~NO_FANOUT~
+in => out.DATAIN
+out <= in.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|link_light:SR5
+clk => ~NO_FANOUT~
+in => out.DATAIN
+out <= in.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|link_light:SR6
+clk => ~NO_FANOUT~
+in => out.DATAIN
+out <= in.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|link_light:SR7
+clk => ~NO_FANOUT~
+in => out.DATAIN
+out <= in.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|link_light:SR8
+clk => ~NO_FANOUT~
+in => out.DATAIN
+out <= in.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|link_light:SR9
+clk => ~NO_FANOUT~
+in => out.DATAIN
+out <= in.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|link_light:SR10
+clk => ~NO_FANOUT~
+in => out.DATAIN
+out <= in.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|link_light:SR17
+clk => ~NO_FANOUT~
+in => out.DATAIN
+out <= in.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|car|link_light:SR18
+clk => ~NO_FANOUT~
+in => out.DATAIN
+out <= in.DB_MAX_OUTPUT_PORT_TYPE
+
+

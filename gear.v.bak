@@ -1,0 +1,45 @@
+module GEAR (rst, clutch, gear_up, gear_down, velocity, gear_out);
+
+   input rst, clutch, gear_up, gear_down;
+   input [7:0] velocity;
+   output reg [2:0] gear_out;
+   
+   parameter GEAR_UP = (velocity[7]&&velocity[4]) || (velocity[3] || !(velocity[2]) || !(velocity[1]) &&velocity[0]);
+   parameter GEAR_DOWN = (!velocity[4] && (!velocity[7]||!velocity[6])&& (!velocity[7]||!velocity[5])&& (velocity[7]||velocity[6]||velocity[5]));
+   
+   always @ (velocity)
+      if(!rst)
+      begin
+         gear_out <= 3'b000;
+      end
+      else
+      begin
+         gear_out <= 3'b001;
+      end
+      
+      if(!clutch)
+      begin
+         if(GEAR_UP)
+         begin
+            if(!gear_up)
+            begin
+               gear_out <= gear_out+1;
+            end
+            else
+            begin
+               gear_out <= gear_out;
+            end
+         end
+         else if(GEAR_DOWN)
+         begin
+            if(!gear_down)
+            begin
+               gear_out <= gear_out-1;
+            end
+            else
+            begin
+               gear_out <= gear_out;
+            end
+         end
+      end
+endmodule

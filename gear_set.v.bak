@@ -1,0 +1,45 @@
+module gear_set(rst,clutch,switch0, switch1, switch2, switch3, gear);
+
+  
+   input rst,clutch,switch0, switch1, switch2, switch3;
+
+   output reg [3:0] gear;
+
+   always @(*)
+	begin
+		if(rst)
+		begin
+			if(!clutch)
+				begin
+					if(switch3)
+						begin
+							gear <= 5;
+						end
+						else if(switch2)
+						begin
+							gear <= 4;
+						end
+					else if(switch1)
+						begin
+							gear <= 3;
+						end
+					else if(switch0)
+						begin
+							gear <= 2;
+						end
+					else
+						begin
+							gear <= 1;
+						end
+				end
+			else
+			begin
+				gear <= gear;
+			end
+		end
+		else
+			begin
+			gear <= 0;
+			end
+		end
+endmodule

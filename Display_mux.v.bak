@@ -1,0 +1,24 @@
+module Display_mux(MODE, AC_seg, BK_seg, out_seg);
+
+input [1:0] MODE;
+input [3:0] AC_seg, BK_seg;
+
+output reg [3:0] out_seg;
+
+always @(MODE)
+
+begin
+
+ case (MODE)
+
+  0 : out_seg <= AC_seg;
+
+  1 : out_seg <= BK_seg;
+
+  //2 : out_seg <= T_seg;
+
+ endcase
+
+end
+
+endmodule

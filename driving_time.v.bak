@@ -1,0 +1,6 @@
+module driving_time ( ab_out,cg_out, start);
+
+input [7:0] ab_out,cg_out;
+
+output reg [8:0] start;
+

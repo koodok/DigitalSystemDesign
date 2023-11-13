@@ -1,0 +1,6 @@
+module link_light(clk, in, out);
+
+input clk, in;
+output out;
+
+always@(posedge clk)

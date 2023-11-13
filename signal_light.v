@@ -1,0 +1,20 @@
+module signal_light(clk_in,rst,light_out1,light_out2);
+
+input clk_in,rst;
+output reg light_out1, light_out2;
+
+always@(clk_in)
+begin
+   if(rst)
+      begin
+      light_out1 <= clk_in;
+		light_out2 <= clk_in;
+      end
+   else
+      begin
+      light_out1 <= rst;
+		light_out2 <= rst;
+      end
+end
+
+endmodule
